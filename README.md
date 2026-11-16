@@ -55,7 +55,18 @@ See `docs/design-notes.md` for the reasoning behind each decision.
 | **Inheritance** | The four subclasses extend `HealthProfessional` | Shared state and validation written once, not four times |
 | **Polymorphism** | `List<HealthProfessional>` iterated and printed; `performDuty()` overridden per type | One loop handles a mixed collection and each object responds in its own way |
 
-## 5. Scope decisions
+## 5. What the demonstration prints
+
+Running `AssignmentOne` produces four sections, one per group of parts in the brief.
+
+| Section | What it shows |
+|---|---|
+| Part 1–3 | All eight professionals printed, their signature duty called through the common type, and the inherited availability data read through the same type |
+| Part 4 | One appointment printed in full, the same class holding a GP and then a surgeon, four appointments sorted by `compareTo`, and three objects rejected by their constructors |
+| Part 5 | Six bookings added, four rejected with warnings, the day listed and filtered two ways, cancellation by professional id + time and by mobile number, and the same code running on a different timetable |
+| Part 6 | One day end to end: bookings arriving, the day inspected, two cancellations, the freed slot rebooked, six error cases, then an end-of-day summary with each professional's load |
+
+## 6. Scope decisions
 
 The brief limits bookings to the current day and leaves several details open. The
 choices made here are recorded, with reasons, in `docs/design-notes.md`.
